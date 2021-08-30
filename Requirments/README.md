@@ -118,7 +118,7 @@ Your database should contain the following four models, including the requiremen
   
     * References the `Category` model's `id`.
 
-* `Tag`
+* `Tag`-----------------------------
 
   * `id`
   
@@ -134,7 +134,7 @@ Your database should contain the following four models, including the requiremen
   
     * String.
 
-* `ProductTag`
+* `ProductTag`-----------------------
 
   * `id`
 
