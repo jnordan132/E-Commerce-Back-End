@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         const categoryData = await Category.findAll({
             include: [{ model: Product }],
         });
-        res.status(200).json(categoryData);
+        res.status(201).json(categoryData);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -18,10 +18,16 @@ router.get('/', (req, res) => {
 // gets specific category based on id
 router.get('/:id', (req, res) => {
     try {
-        const categoryData = await Category.findByPk(req.params.id, {
+        const categoryDataById = await Category.findByPk(req.params.id, {
             include: [{ model: Product }],
         });
-        res.status(200).json(categoryData);
+
+        if (!CategoryDataById) {
+            res.status(404).json({ message: 'No category found with that id.' })
+            return;
+        }
+
+        res.status(201).json(categoryDataById);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -30,16 +36,15 @@ router.get('/:id', (req, res) => {
 // creates new category
 router.post('/', (req, res) => {
     try {
-        const categoryData = await Category.create({
-            category_name: req.body.category_name,
-        });
-        res.status(200).json(categoryData);
+        const newCategoryData = await Category.create(req.body);
+
+        res.status(201).json(newCategoryData);
     } catch (err) {
-        req.status(400).json(err);
+        req.status(500).json(err);
     }
 });
 
-// updated specific category based on id
+// update specific category based on id
 router.put('/:id', (req, res) => {
     try {
         const updatedCategory = await Category.update({
@@ -53,13 +58,13 @@ router.put('/:id', (req, res) => {
             res.status(404).json({ message: "No category found with that id!" });
             return;
         }
-        res.status(200).json(updatedCategory);
+        res.status(201).json(updatedCategory);
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// deleted specific category based on id
+// delete specific category based on id
 router.delete('/:id', (req, res) => {
     try {
         const deletecategory = await Category.destroy({
@@ -72,7 +77,7 @@ router.delete('/:id', (req, res) => {
             return;
         }
 
-        res.status(200).json(deletecategory);
+        res.status(201).json(deletecategory);
     } catch (err) {
         res.status(500).json(err);
     }
