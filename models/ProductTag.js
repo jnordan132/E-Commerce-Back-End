@@ -16,6 +16,7 @@ ProductTag.init({
         references: {
             model: 'Product',
             key: 'id',
+            unique: false,
         },
     },
     tag_ig: {
@@ -23,6 +24,7 @@ ProductTag.init({
         references: {
             model: 'Tag',
             key: 'id',
+            unique: false,
         },
     },
 }, {
