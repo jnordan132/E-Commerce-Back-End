@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         const tagsData = await Tag.findAll({
             include: [{ model: Product, through: ProductTag }],
         });
-        res.status(201).json(tagsData);
+        res.status(200).json(tagsData);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ message: 'No tag found with that id!' });
             return;
         }
-        res.status(201).json(tagDataById);
+        res.status(200).json(tagDataById);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
             },
         });
 
-        res.status(201).json(updatedTag);
+        res.status(200).json(updatedTag);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -73,7 +73,7 @@ router.delete('/:id', (req, res) => {
             return;
         }
 
-        res.status(201).json(deletedTag);
+        res.status(200).json(deletedTag);
     } catch (err) {
         res.status(500).json(err);
     }

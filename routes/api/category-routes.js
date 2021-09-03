@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         const categoryData = await Category.findAll({
             include: [{ model: Product }],
         });
-        res.status(201).json(categoryData);
+        res.status(200).json(categoryData);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
             return;
         }
 
-        res.status(201).json(categoryDataById);
+        res.status(200).json(categoryDataById);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -58,7 +58,7 @@ router.put('/:id', (req, res) => {
             res.status(404).json({ message: "No category found with that id!" });
             return;
         }
-        res.status(201).json(updatedCategory);
+        res.status(200).json(updatedCategory);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -77,7 +77,7 @@ router.delete('/:id', (req, res) => {
             return;
         }
 
-        res.status(201).json(deletecategory);
+        res.status(200).json(deletecategory);
     } catch (err) {
         res.status(500).json(err);
     }
