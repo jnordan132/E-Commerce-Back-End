@@ -22,7 +22,7 @@ router.get('/:id', async(req, res) => {
             include: [{ model: Product, as: 'products' }],
         });
 
-        if (!CategoryDataById) {
+        if (!categoryDataById) {
             res.status(404).json({ message: 'No category found with that id.' })
             return;
         }
@@ -40,7 +40,7 @@ router.post('/', async(req, res) => {
 
         res.status(201).json(newCategoryData);
     } catch (err) {
-        req.status(500).json(err);
+        res.status(400).json(err);
     }
 });
 
