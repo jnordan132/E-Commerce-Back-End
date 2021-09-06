@@ -1,3 +1,6 @@
+[GitHub Repo](https://github.com/jnordan132/E-Commerce-Back-End)\
+[Live Video](https://drive.google.com/file/d/14D6c4Ggya94eY4_BrAzSyGy5RPsRd6UX/view)
+
 # E-Commerce-Back-End
 https://github.com/jnordan132/E-Commerce-Back-End
 # Description
@@ -9,6 +12,7 @@ This project focused on routes and making changes to a MySQL database using POST
 * [Contributing](#contributions)
 * [Tests](#tests)
 * [Questions](#questions)
+* [Screenshots](#screenshots)
 # Installation
 The following necessary dependencies must be installed to run the application properly: mysql2, sequelize, nodemon, express, and dotenv.
 # Usage
@@ -37,3 +41,9 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR TH
 The following is needed to run tests: Insomnia
 # Questions
 If you have any questions about the repository contact Jacob Nordan directly at: jacob.nordan113322@gmail.com.
+# Screenshots
+![GET all](https://user-images.githubusercontent.com/81433664/132261038-9970f073-6d34-4763-9c95-e2355beac2db.jpg)
+![GET specific](https://user-images.githubusercontent.com/81433664/132261039-67e16161-5e9e-4e4e-a20d-02a928f647b1.jpg)
+![POST new](https://user-images.githubusercontent.com/81433664/132261044-d9ba0b1c-0ab0-4ee2-8b89-81873f79870b.jpg)
+![PUT new](https://user-images.githubusercontent.com/81433664/132261051-cbb61534-5c42-47bd-9ac6-b52bf3f3ed60.jpg)
+![DELETE new](https://user-images.githubusercontent.com/81433664/132261053-a749da91-1ee5-45b9-a0f5-e34cf7107af0.jpg)
