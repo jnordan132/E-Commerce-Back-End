@@ -1,8 +1,6 @@
+# E-Commerce-Back-End
 [GitHub Repo](https://github.com/jnordan132/E-Commerce-Back-End)\
 [Live Video](https://drive.google.com/file/d/14D6c4Ggya94eY4_BrAzSyGy5RPsRd6UX/view)
-
-# E-Commerce-Back-End
-https://github.com/jnordan132/E-Commerce-Back-End
 # Description
 This project focused on routes and making changes to a MySQL database using POST, PUT, and DELETE requests, an e-commerce store would have a very similar backend structure. 
 # Table of Contents 
