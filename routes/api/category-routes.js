@@ -4,7 +4,7 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 // gets all categories
-router.get('/', (req, res) => {
+router.get('/', async(req, res) => {
     try {
         const categoryData = await Category.findAll({
             include: [{ model: Product }],
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 // gets specific category based on id
-router.get('/:id', (req, res) => {
+router.get('/:id', async(req, res) => {
     try {
         const categoryDataById = await Category.findByPk(req.params.id, {
             include: [{ model: Product }],
@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 });
 
 // creates new category
-router.post('/', (req, res) => {
+router.post('/', async(req, res) => {
     try {
         const newCategoryData = await Category.create(req.body);
 
@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
 });
 
 // update specific category based on id
-router.put('/:id', (req, res) => {
+router.put('/:id', async(req, res) => {
     try {
         const updatedCategory = await Category.update({
             category_name: req.body.category_name,
@@ -65,7 +65,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete specific category based on id
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async(req, res) => {
     try {
         const deletecategory = await Category.destroy({
             where: {
